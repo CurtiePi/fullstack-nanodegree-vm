@@ -1,0 +1,16 @@
+{% include "header.html" %}
+        <h2>Detail for {{ equip.name }}</h2>
+        <p><span><img src="{{ equip.image }}" width="75" height="75"/></span>
+        <p>Price: {{ equip.price }}
+        <p>Description:{{ equip.description }}
+        <br/>
+        {% if 'username' in session %}
+            <a href="{{ url_for('editEquipment', cat_id = category.id, equip_id = equip.id) }}">
+                EDIT
+            </a>
+             | 
+            <a href="{{ url_for('deleteEquipment', cat_id = category.id, equip_id = equip.id) }}">
+                DELETE
+            </a>
+        {% endif %}
+            <br/>

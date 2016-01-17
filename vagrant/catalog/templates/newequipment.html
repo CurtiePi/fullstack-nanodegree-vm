@@ -1,0 +1,13 @@
+{% include "header.html" %}
+    <body>
+        <h2>New {{ cat.name }} Equipment</h2>
+        <form enctype="multipart/form-data" method="POST" action="{{url_for('newEquipment', cat_id=cat.id) }}">
+            <br/>Name: <input type="text" name="ename" size="30"><br/>
+            <br/>Price: <input type="text" name="price" size="5"><br/>
+            <br/>Description: <textarea name="description" rows="7" columns="60"></textarea><br/>
+            <br/>Image: <input type="file" name="imagefile"><br/>
+            <br/><input type="submit" value="Submit">
+        </form>
+        <a href="{{ url_for('showSportEquipment', cat_id=cat.id) }}">Cancel</a>
+    </body>
+</html>

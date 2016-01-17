@@ -1,0 +1,34 @@
+{% extends "categories.html" %}
+{% include "header.html" %}
+{% block body %}
+        <h2>Equipment for {{ category.name }}( {{ equipment|count }} Items)</h2>
+        {% if 'username' in session %}
+            <a href="{{ url_for('newEquipment', cat_id = category.id) }}">
+                Add {{ category.name }} equipment
+            </a>
+        {% endif %}
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul>
+                {% for message in messages %}
+                    <li><strong>{{ message }}</strong></li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        <p>
+        {% for e in equipment %}
+            <br/>
+            <a class="equiplist" href="{{url_for('showEquipmentDetail', equip_id=e.id) }}"/>{{ e.name }}</a> 
+            {% if 'username' in session %}
+                <a class="small-text" href="{{ url_for('editEquipment', cat_id = category.id, equip_id = e.id) }}">
+                    EDIT
+                </a>
+                 | 
+                <a class="small-text" href="{{ url_for('deleteEquipment', cat_id = category.id, equip_id = e.id) }}">
+                    DELETE
+                </a>
+                <br/>
+            {% endif %}
+        {% endfor %}
+{% endblock %}

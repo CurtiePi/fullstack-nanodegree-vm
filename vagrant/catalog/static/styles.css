@@ -1,0 +1,49 @@
+
+.catlist {
+          float: left;
+          width: 200px;
+          position: relative;
+}
+
+.catlist a {
+            font-size: 20px;
+}
+
+.equiplist {
+            font-size: 20px;
+}
+
+.container {
+            position: absolute;
+            margin-left: 200px;
+}
+
+.top-menu {
+	padding-top: 20px;
+	padding-bottom: 20px;
+        display: inline;
+        background-color: #000000;
+}
+
+.top-menu p {
+	margin-bottom: 0;
+	line-height: 16px;
+        margin-left: 16px;
+}
+
+.stealth { text-decoration: none 
+}
+
+span img { margin-left: 200px;
+            padding-left: 25px
+}
+
+.small-text {
+             font-size: 10px;
+}
+
+.menu-flash {
+             text-align: center;
+             font-size: 15px;
+             color: #ffff00;
+}

@@ -1,0 +1,10 @@
+{% include "header.html" %}
+    <body>
+        <h2>Delete {{ category.name }} Equipment</h2>
+        <p>Are you sure you want to delete {{ equipment.name }}?
+        <form enctype="multipart/form-data" method="POST" action="{{url_for('deleteEquipment', cat_id=category.id, equip_id=equipment.id) }}">
+            <br/><input type="submit" value="Delete">
+        </form>
+        <a href="{{ url_for('showSportEquipment', cat_id=category.id) }}">Cancel</a>
+    </body>
+</html>

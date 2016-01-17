@@ -1,0 +1,10 @@
+{% extends "categories.html" %}
+{% include "header.html" %}
+{% block body %}
+        <h2>Latest Equipment</h2>
+        {% for e in equipment %}
+            <br/>
+            <a class="equiplist"  href="{{url_for('showEquipmentDetail', equip_id=e.id) }}"/>{{ e.name }}</a> ({{ e.category.name }})
+            <br/>
+        {% endfor %}
+{% endblock %}

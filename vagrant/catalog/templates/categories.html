@@ -1,0 +1,17 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <div id="category" class="catlist">
+            <h2>Categories</h2>
+            {% for c in categories %}
+            <a class="stealth" href="{{ url_for('showSportEquipment', cat_id = c.id) }}">{{ c.name }}</a>
+            <br/>
+            {% endfor %}
+        </div>
+        <div class="container">
+        {% block body %}
+        {% endblock %}
+        </div>
+    </body>
+</html>

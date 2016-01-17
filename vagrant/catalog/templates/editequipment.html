@@ -1,0 +1,13 @@
+{% include "header.html" %}
+    <body>
+        <h2>Edit {{ cat.name }} Equipment</h2>
+        <form enctype="multipart/form-data" method="POST" action="{{url_for('editEquipment', cat_id=cat.id, equip_id = equip.id) }}">
+            <br/>Name: <input type="text" name="ename" placeholder="{{ equip.name }}" size="30"><br/>
+            <br/>Price: <input type="text" name="price" placeholder="{{ equip.price }}" size="5"><br/>
+            <br/>Description: <textarea name="description" placeholder="{{ equip.description }}" rows="7" columns="60"></textarea><br/>
+            <br/>Image: <input type="file" name="imagefile"><br/>
+            <br/><input type="submit" value="Submit">
+        </form>
+        <a href="{{ url_for('showSportEquipment', cat_id=cat.id) }}">Cancel</a>
+    </body>
+</html>
